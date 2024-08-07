@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@basemaps/sprites": "^7.5.0",
+    "@unvt/charites": "^0.5.4"
+  }
+}
