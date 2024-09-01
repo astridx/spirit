@@ -6,6 +6,7 @@ sprites.png
 sprites.json
 sprites@2x.png
 sprites@2x.json
+<<<<<<< HEAD
 z*.txt
 
 .bundle/
@@ -15,6 +16,6 @@ tilekiln/
 package.json
 package-lock.json
 
+=======
+>>>>>>> 6552737 (font-maker)
 fonts/
-
-.editorconfig
