@@ -55,9 +55,7 @@ themepark:add_proc('way', function(object, data)
     ) then
         local a = { waterway = object.tags.waterway,
                     geom = object:as_linestring() }
-        if themepark.themes.core.add_name(a, object) then
-            themepark:insert('waterways', a)
-        end
+        themepark.themes.core.add_name(a, object)
         themepark:add_debug_info(a, object.tags)
         themepark:insert('waterways', a)
     end
