@@ -13,8 +13,7 @@ themepark:add_table{
     name = 'water',
     ids_type = 'area',
     geom = 'multipolygon',
-    columns = themepark:columns({
-        { column = 'name', type = 'text' },
+    columns = themepark:columns('core/name', {
         { column = 'way_area', type = 'real' },
         { column = 'point', type = 'point' },
     }),
@@ -27,8 +26,7 @@ themepark:add_table{
     name = 'waterways',
     ids_type = 'way',
     geom = 'linestring',
-    columns = themepark:columns({
-        { column = 'name', type = 'text' },
+    columns = themepark:columns('core/name', {
         { column = 'waterway', type = 'text' },
     }),
 }
@@ -55,8 +53,11 @@ themepark:add_proc('way', function(object, data)
         or object.tags.waterway == 'drain'
         or object.tags.waterway == 'ditch'
     ) then
-        local a = { name = object.tags.name, waterway = object.tags.waterway,
+        local a = { waterway = object.tags.waterway,
                     geom = object:as_linestring() }
+        if themepark.themes.core.add_name(a, object) then
+            themepark:insert('waterways', a)
+        end
         themepark:add_debug_info(a, object.tags)
         themepark:insert('waterways', a)
     end
