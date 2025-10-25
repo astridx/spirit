@@ -11,3 +11,10 @@ z*.txt
 .bundle/
 vendor/
 tilekiln/
+
+package.json
+package-lock.json
+
+fonts/
+
+.editorconfig
