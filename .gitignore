@@ -9,3 +9,10 @@ sprites@2x.json
 fonts/
 fonts_temp/
 z*.txt
+
+.bundle/
+vendor/
+tilekiln/
+
+package.json
+package-lock.json
